@@ -5,15 +5,15 @@ from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 # Authenticate & Build Service
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = 'no-org-329603-efeb522bcdb4.json'
+KEY_FILE_LOCATION = 'example.json'
 credentials = ServiceAccountCredentials.from_json_keyfile_name(KEY_FILE_LOCATION, SCOPES)
 analytics = build('analyticsreporting', 'v4', credentials=credentials)
 import json
 import csv
 # Set Request Parameters
 
-#VIEW_ID = '180230458'
-views = {'Short Automaton': '180230458'}
+#VIEW_ID = 'example-ID'
+views = {'Short Automaton': 'example-ID'}
 dimensions = ['ga:country','ga:countryIsoCode','ga:region'] # to add dimensions topic
 metrics = ['ga:sessions','ga:users'] # to add metric topic
 # https://ga-dev-tools.web.app/dimensions-metrics-explorer
